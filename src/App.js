@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CountryList from "./components/CountryList";
-import Modal from './components/modal/Modal.js';
+import Modal from './components/Modal.js';
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -86,7 +86,7 @@ function App() {
     color: "white",
     border: "none",
     padding: "10px 20px",
-    margin: "5px",
+    margin: "15px",
     cursor: "pointer",
     borderRadius: "5px",
     fontSize: "16px",
@@ -125,7 +125,7 @@ function App() {
           placeholder="Enter country name"
           value={newCountryName}
           onChange={(e) => setNewCountryName(e.target.value)}
-          style={{ width: "100%", padding: "10px", marginBottom: "15px", borderRadius: "5px", border: "1px solid #ccc" }}
+          style={{ width: "90%", padding: "10px", marginBottom: "15px", borderRadius: "5px", border: "1px solid #ccc" }}
         />
         <button
           style={{

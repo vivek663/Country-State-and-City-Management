@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import StateList from "./StateList";
-import Modal from "./modal/Modal.js";
+import Modal from "./Modal.js";
 
 function CountryList({ countries, editCountry, openDeleteCountryModal }) {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -97,7 +97,7 @@ function CountryList({ countries, editCountry, openDeleteCountryModal }) {
           placeholder="Enter new country name"
           value={updatedCountryName}
           onChange={(e) => setUpdatedCountryName(e.target.value)}
-          style={{ width: "100%", padding: "10px", marginBottom: "15px", borderRadius: "5px", border: "1px solid #ccc" }}
+          style={{ width: "90%", padding: "10px", marginBottom: "15px", borderRadius: "5px", border: "1px solid #ccc" }}
         />
         <button
           style={{

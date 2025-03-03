@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Modal from "./modal/Modal.js";
+import Modal from "./Modal.js";
 
 function CityList({ state }) {
   const [cities, setCities] = useState(state.cities);
@@ -7,6 +7,28 @@ function CityList({ state }) {
   const [isDeleteCityModalOpen, setIsDeleteCityModalOpen] = useState(false);
   const [selectedCity, setSelectedCity] = useState(null);
   const [newCityName, setNewCityName] = useState("");
+
+  const buttonStyle = {
+    backgroundColor: "#3498db",
+    color: "white",
+    border: "none",
+    padding: "8px 16px",
+    margin: "5px",
+    cursor: "pointer",
+    borderRadius: "5px",
+    fontSize: "14px",
+    transition: "background-color 0.3s ease",
+  };
+
+  const deleteButtonStyle = {
+    ...buttonStyle,
+    backgroundColor: "#e74c3c",
+  };
+
+  const addButtonStyle = {
+    ...buttonStyle,
+    backgroundColor: "#27ae60",
+  };
 
   // Open the add city modal
   const openAddCityModal = () => {
@@ -54,13 +76,13 @@ function CityList({ state }) {
 
   return (
     <div>
-      <button onClick={openAddCityModal}>Add City</button>
+      <button onClick={openAddCityModal} style={buttonStyle}>Add City</button>
 
       {cities.map((city) => (
-        <div key={city.id} style={{ marginLeft: "40px", marginTop: "10px" }}>
+        <div key={city.id} style={{ marginLeft: "40px", marginTop: "10px", backgroundColor:"#9da0a7", padding:"10px", borderRadius:"5px" }}>
           <p>
             {city.name}
-            <button onClick={() => openDeleteCityModal(city)}>Delete</button>
+            <button onClick={() => openDeleteCityModal(city)} style={deleteButtonStyle}>Delete</button>
           </p>
         </div>
       ))}
@@ -78,7 +100,7 @@ function CityList({ state }) {
           onChange={(e) => setNewCityName(e.target.value)}
           style={{ width: "90%", padding: "10px", marginBottom: "15px", borderRadius: "5px", border: "1px solid #ccc" }}
         />
-        <button onClick={addCity}>Add</button>
+        <button onClick={addCity} style={addButtonStyle}>Add</button>
       </Modal>
 
       {/* Delete City Modal */}

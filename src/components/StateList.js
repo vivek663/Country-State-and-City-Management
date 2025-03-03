@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CityList from "./CityList";
-import Modal from "./modal/Modal.js";
+import Modal from "./Modal.js";
 
 function StateList({ country }) {
   const [states, setStates] = useState(country.states);
@@ -85,7 +85,7 @@ function StateList({ country }) {
 
   // Styling
   const stateItemStyle = {
-    backgroundColor: "#fff",
+    backgroundColor: "lightgray",
     padding: "15px",
     margin: "10px 0",
     borderRadius: "8px",
@@ -153,7 +153,7 @@ function StateList({ country }) {
           placeholder="Enter state name"
           value={newStateName}
           onChange={(e) => setNewStateName(e.target.value)}
-          style={{ width: "100%", padding: "10px", marginBottom: "15px", borderRadius: "5px", border: "1px solid #ccc" }}
+          style={{ width: "90%", padding: "10px", marginBottom: "15px", borderRadius: "5px", border: "1px solid #ccc" }}
         />
         <button
           style={{
@@ -177,7 +177,7 @@ function StateList({ country }) {
           placeholder="Enter new state name"
           value={updatedStateName}
           onChange={(e) => setUpdatedStateName(e.target.value)}
-          style={{ width: "100%", padding: "10px", marginBottom: "15px", borderRadius: "5px", border: "1px solid #ccc" }}
+          style={{ width: "90%", padding: "10px", marginBottom: "15px", borderRadius: "5px", border: "1px solid #ccc" }}
         />
         <button
           style={{
