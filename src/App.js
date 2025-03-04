@@ -64,7 +64,7 @@ function App() {
 
   // Styling
   const appStyle = {
-    maxWidth: "800px",
+    maxWidth: "1100px",
     margin: "0 auto",
     padding: "20px",
     backgroundColor: "#f9f9f9",
@@ -85,11 +85,11 @@ function App() {
     backgroundColor: "#3498db",
     color: "white",
     border: "none",
-    padding: "10px 20px",
-    margin: "15px",
+    padding: "5px 10px",
+    margin: "10px",
     cursor: "pointer",
     borderRadius: "5px",
-    fontSize: "16px",
+    fontSize: "14px",
     transition: "background-color 0.3s ease",
   };
 

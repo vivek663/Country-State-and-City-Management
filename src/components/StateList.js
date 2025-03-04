@@ -87,9 +87,15 @@ function StateList({ country }) {
   const stateItemStyle = {
     backgroundColor: "lightgray",
     padding: "15px",
-    margin: "10px 0",
+    margin: "15px 0 0 20px",
     borderRadius: "8px",
     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+  };
+
+  const Header = {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
   };
 
   const stateNameStyle = {
@@ -103,7 +109,7 @@ function StateList({ country }) {
     backgroundColor: "#3498db",
     color: "white",
     border: "none",
-    padding: "8px 16px",
+    padding: "5px 10px",
     margin: "5px",
     cursor: "pointer",
     borderRadius: "5px",
@@ -129,14 +135,16 @@ function StateList({ country }) {
 
       {states.map((state) => (
         <div key={state.id} style={stateItemStyle}>
-          <h3 style={stateNameStyle}>{state.name}</h3>
-          <div>
-            <button style={editButtonStyle} onClick={() => openEditStateModal(state)}>
-              Edit
-            </button>
-            <button style={deleteButtonStyle} onClick={() => openDeleteStateModal(state)}>
-              Delete
-            </button>
+          <div style={Header}>
+            <h3 style={stateNameStyle}>{state.name}</h3>
+            <div>
+              <button style={editButtonStyle} onClick={() => openEditStateModal(state)}>
+                Edit
+              </button>
+              <button style={deleteButtonStyle} onClick={() => openDeleteStateModal(state)}>
+                Delete
+              </button>
+            </div>
           </div>
           <CityList state={state} />
         </div>

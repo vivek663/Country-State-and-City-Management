@@ -51,12 +51,18 @@ function CountryList({ countries, editCountry, openDeleteCountryModal }) {
     backgroundColor: "#3498db",
     color: "white",
     border: "none",
-    padding: "10px 20px",
+    padding: "5px 10px",
     margin: "5px",
     cursor: "pointer",
     borderRadius: "5px",
     fontSize: "14px",
     transition: "background-color 0.3s ease",
+  };
+
+  const Header = {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
   };
 
   const editButtonStyle = {
@@ -73,14 +79,16 @@ function CountryList({ countries, editCountry, openDeleteCountryModal }) {
     <div>
       {countries.map((country) => (
         <div key={country.id} style={countryItemStyle}>
-          <h2 style={countryNameStyle}>{country.name}</h2>
-          <div>
-            <button style={editButtonStyle} onClick={() => openEditModal(country)}>
-              Edit
-            </button>
-            <button style={deleteButtonStyle} onClick={() => openDeleteCountryModal(country)}>
-              Delete
-            </button>
+          <div style={Header}>
+            <h2 style={countryNameStyle}>{country.name}</h2>
+            <div>
+              <button style={editButtonStyle} onClick={() => openEditModal(country)}>
+                Edit
+              </button>
+              <button style={deleteButtonStyle} onClick={() => openDeleteCountryModal(country)}>
+                Delete
+              </button>
+            </div>
           </div>
           <StateList country={country} />
         </div>
